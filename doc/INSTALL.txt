@@ -1,0 +1,17 @@
+===============================
+Installation von Mountain cam
+===============================
+
+---------------------
+Benötigte Programme
+---------------------
+- Apache mit PHP
+- Mysql
+
+---------------------
+Vorbereitung
+---------------------
+MYSQL script ausführen mit dem Befehl:
+
+mysql -u [USER] -p < schema.sql
+

@@ -1,0 +1,76 @@
+/*
+  Template for Mountain cam
+  Written by Nicolas Mauchle
+
+*/
+
+body {
+    margin:0;
+    padding:0;
+    font-size:12px;
+    font-family:verdana, Arial, Helvetica, sans-serif;
+    color:#333333;
+    background-color:#FFFFFF;
+}
+
+.header {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    float: left;
+    color: #C4C5C3;
+    background-color: #2D3134;
+
+}
+
+.header #logo {
+    float:left;
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left: 15px;
+}
+
+.header #logo h1 {
+    font-size:32px;
+}
+
+.header #logo p {
+    font-size: 16px;
+}
+
+.header #topnav {
+    font-family: Verdana,Arial;
+    font-size: 16px;
+    float: right;
+    margin-left: 200px;
+    margin-top: 60px;
+}
+
+.header #topnav li {
+    list-style:none;
+    float: right;
+    margin-right: 55px;
+
+
+}
+
+.main {
+    width: 100%px;
+    background-color: #7C878F;
+}
+
+.main #center {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 16px;
+    color:#FFFFFF;
+    width: 100%px;
+    font-size: 16px;
+
+}
+.main #image  {
+    height: 350px;
+    position: center;
+}
+
+.clear{clear: both;}

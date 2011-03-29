@@ -1,5 +1,5 @@
 <?php
-include 'dbConnect.php';
+include 'inc/dbConnect.php';
 echo '<head>
   <title>Mountain cam</title>
   <meta content="">

@@ -21,7 +21,10 @@ echo '<table>
 echo 'Bilder in der Datenbank:';
 $query = "select i.id, i.name, i.pfad, i.date, c.name as category from Images i, Category c where i.Category_id = c.id";
 $result = mysql_query($query);
+$i = 0;
+$pfad[] = 3;
 while( $row = mysql_fetch_array($result) ) {
+$pfad[$i] = $row['pfad'];
 echo '<table>
        <tr>
          <td align="left">'.$row['id'].' </td>
@@ -31,6 +34,9 @@ echo '<table>
          <td align="left">'.$row['category'].' </td>
        </tr>
      </table>';
-echo "Zeige Bild an: <br /> <img src='..".$row['pfad']."'/>";
+echo "Zeige Bild an: <br /> <img src='".$row['pfad']."'/>";
+$i++;
  }
+
+print_r($pfad);
 

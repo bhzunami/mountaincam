@@ -17,10 +17,10 @@ mysql -u [USER] -p < schema.sql
 
 Um ein paar Testdaten in der Datenbank zu haben, kann man folgende Einträge machen:
 
-insert into Images (name, pfad, date, Category_id) Values ('Bild_1', '/images/1.jpg', NOW(), 1);
+insert into Images (name, pfad, date, Category_id) Values ('Bild_1', '../images/1.jpg', NOW(), 1);
 
-insert into Images (name, pfad, date, Category_id) Values ('Bild_2', '/images/2.jpg', NOW(), 2);
+insert into Images (name, pfad, date, Category_id) Values ('Bild_2', '../images/2.jpg', NOW(), 2);
 
-insert into Images (name, pfad, date, Category_id) Values ('Bild_3', '/images/3.jpg', NOW(), 3);
+insert into Images (name, pfad, date, Category_id) Values ('Bild_3', '../images/3.jpg', NOW(), 3);
 
 Natürlich sollte dann auch im Verzeichniss images die 3 Bilder haben.

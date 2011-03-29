@@ -10,7 +10,7 @@ body {
     font-size:12px;
     font-family:verdana, Arial, Helvetica, sans-serif;
     color:#333333;
-    background-color:#FFFFFF;
+    background-color:#eeeeee;
 }
 
 .header {
@@ -42,35 +42,48 @@ body {
     font-family: Verdana,Arial;
     font-size: 16px;
     float: right;
-    margin-left: 200px;
     margin-top: 60px;
 }
 
 .header #topnav li {
     list-style:none;
-    float: right;
+    float: left;
     margin-right: 55px;
-
-
 }
+
+.header #topnav a {
+    text-decoration: none;
+}
+
+.header li a:link, .header li a:visited, .header li a:hover{
+	margin:0;
+	padding:0 3px 10px 3px;
+	color:#FFFFFF;
+	background-color:#2D3134;
+	border-bottom:1px solid #2D3134;
+	}
+
+.header li a:hover, .header li.active a{
+	color:#02ACEE;
+	background-color:#2D3134;
+	border-bottom-color:#02ACEE;
+	}
+
+.header #topnav li.last{
+	margin-right:0;
+	}
 
 .main {
     width: 100%px;
-    background-color: #7C878F;
+    background-color: #02ACEE;
 }
 
-.main #center {
-    margin-bottom: 20px;
-    margin-left: 20px;
-    font-size: 16px;
-    color:#FFFFFF;
-    width: 100%px;
-    font-size: 16px;
 
-}
 .main #image  {
     height: 350px;
     position: center;
+    padding-top: 15px;
+    padding-left: 35px;
 }
 
 .clear{clear: both;}

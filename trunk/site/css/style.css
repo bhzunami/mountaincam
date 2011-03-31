@@ -1,89 +1,63 @@
 /*
-  Template for Mountain cam
+  Template for Mountain Cam
   Written by Nicolas Mauchle
 
 */
+
+@import url(top.css);
 
 body {
     margin:0;
     padding:0;
     font-size:12px;
     font-family:verdana, Arial, Helvetica, sans-serif;
-    color:#333333;
-    background-color:#eeeeee;
+    color:#FFFFFF;
+    background-color:#2A2B2F;
 }
 
-.header {
-    position: relative;
-    margin: 0;
-    width: 100%;
-    float: left;
-    color: #C4C5C3;
-    background-color: #2D3134;
-
-}
-
-.header #logo {
+.wrapper {
+    position:relative;
     float:left;
-    margin-top:5px;
-    margin-bottom:5px;
-    margin-left: 15px;
+    width:100%;
+    margin:0;
+    text-align:left;
 }
 
-.header #logo h1 {
-    font-size:32px;
+.content {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 960px;
 }
 
-.header #logo p {
-    font-size: 16px;
+.wrapper h2 {
+    border-bottom: 1px dotted;
 }
 
-.header #topnav {
-    font-family: Verdana,Arial;
-    font-size: 16px;
-    float: right;
-    margin-top: 60px;
-}
+/* ##############################################
+   Image
+   ############################################## */
 
-.header #topnav li {
-    list-style:none;
-    float: left;
-    margin-right: 55px;
-}
-
-.header #topnav a {
-    text-decoration: none;
-}
-
-.header li a:link, .header li a:visited, .header li a:hover{
-	margin:0;
-	padding:0 3px 10px 3px;
-	color:#FFFFFF;
-	background-color:#2D3134;
-	border-bottom:1px solid #2D3134;
-	}
-
-.header li a:hover, .header li.active a{
-	color:#02ACEE;
-	background-color:#2D3134;
-	border-bottom-color:#02ACEE;
-	}
-
-.header #topnav li.last{
-	margin-right:0;
-	}
-
-.main {
-    width: 100%px;
+.img {
     background-color: #02ACEE;
 }
 
-
-.main #image  {
-    height: 350px;
-    position: center;
+#image  {
     padding-top: 15px;
-    padding-left: 35px;
+    padding-bottom: 15px;
+    padding-left: 40px;
 }
 
-.clear{clear: both;}
+/* ##############################################
+   TEXT
+   ############################################## */
+
+#text {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.clear {
+    clear:both;
+}
+

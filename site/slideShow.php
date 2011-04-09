@@ -1,5 +1,8 @@
 <?php
 include 'inc/getImages.php';
+/* Holt sich mit der Function getNewImages()
+   die 3 neusten Bilder und zeigt sie in einer
+   SlideShow an */
 $image = getNewImages();
 echo '    <div class="wrapper img">
       <div class="content">

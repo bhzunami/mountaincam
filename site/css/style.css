@@ -46,9 +46,12 @@ body {
 }
 
 #image  {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+/* Grösse muss übereinstimmen mit der Grösse der Bilder */
+    witdh:800px;
+    height:200px;
 }
 
 /* ##############################################

@@ -42,8 +42,7 @@ function get_web_page( $url )
  */
 function set_camera_position( $side, $repetition, $camAddress){
 	for($i = 0; $i<$repetition; $i++){
-		//get_web_page('http://'. $camUser . ':' . $camPass . '@' . $camAddress . "/cgi-bin/camctrl.cgi?move=home");
-		get_web_page('http://'.  $camAddress . "/cgi-bin/camctrl.cgi?move=" . $side);
+		get_web_page($camAddress . "/cgi-bin/camctrl.cgi?move=" . $side);
 		sleep(2);
 	}
 }

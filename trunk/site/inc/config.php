@@ -1,7 +1,6 @@
 <?php
-	$camAddress = '118.2.32.106'; //'10.142.104.150';
-	$camUser = '';//'root';
-	$camPass = '';//'gibbiX12345';
+	// $camAddress = http://root:gibbiX12345@10.142.104.150
+	$camAddress = 'http://196.221.150.6';
 	if(PHP_OS == "WIN32" || PHP_OS == "WINNT"){
 		$imagepath = "C:\\xampp\htdocs\mountaincam\images\\";
 	}

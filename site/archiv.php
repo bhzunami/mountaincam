@@ -6,6 +6,7 @@ $today = getdate();
 
 $images = getOldImages();
 $max = sizeof($images[0]);
+$limit = 7;
 
 echo '<div class="wrapper">
   <div class="content">

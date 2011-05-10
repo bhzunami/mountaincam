@@ -5,7 +5,7 @@ include 'inc/functions.php';
 
 // Position the Webcam to the left side
 //get_web_page('http://'. $camUser . ':' . $camPass . '@' . $camAddress . "/cgi-bin/camctrl.cgi?move=home");
-get_web_page($camAddress . "/cgi-bin/camctrl.cgi?move=home");
+get_web_page('http://'.  $camAddress . "/cgi-bin/camctrl.cgi?move=home");
 sleep(3);
 set_camera_position("left", 5, $camAddress);
 
@@ -64,5 +64,5 @@ copy( $imagepath . 'temp.jpg', $imagepath . date("d-m-Y") .'/'. $time . '.jpg');
 foreach($images as $image) {
   imagedestroy($image);
 }
-//imagedestroy($new_image);*/
+//imagedestroy($new_image);
 ?>

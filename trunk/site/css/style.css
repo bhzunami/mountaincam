@@ -30,7 +30,10 @@ body {
     display: block;
     position: relative;
     margin: 0 auto;
-    width: 960px;
+/*
+Breite für Bilder anpassen
+*/
+    width: 900px;
 }
 
 .wrapper h2 {
@@ -49,6 +52,9 @@ body {
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 40px;
+/*    witdh:1200px;
+    height:480px;
+*/
 /* Grösse muss übereinstimmen mit der Grösse der Bilder */
     witdh:800px;
     height:200px;

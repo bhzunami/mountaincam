@@ -2,10 +2,11 @@
 echo header('Content-Type: image/jpeg');
 include 'inc/config.php';
 include 'inc/functions.php';
+include 'inc/dbConnect.php';
 
 // Position the Webcam to the left side
 //get_web_page('http://'. $camUser . ':' . $camPass . '@' . $camAddress . "/cgi-bin/camctrl.cgi?move=home");
-get_web_page('http://'.  $camAddress . "/cgi-bin/camctrl.cgi?move=home");
+get_web_page($camAddress . "/cgi-bin/camctrl.cgi?move=home");
 sleep(3);
 set_camera_position("left", 5, $camAddress);
 
@@ -46,23 +47,30 @@ if(!is_dir($imagepath ."/". date("d-m-Y") )){
 }
 // morning, lunch, evening
 if(date('G')<9){
-	$time = 'morning';
+	$time = 'morgen';
+	$category_id = 1;
 }
 elseif(date('G')>9 and date('G')<13){
-	$time = 'lunch';
+	$time = 'mittag';
+	$category_id = 2;
 }
 else{
-	$time = 'evening';
+	$time = 'abend';
+	$category_id = 3;
 }
 // Save the image in the destination
 copy( $imagepath . 'temp.jpg', $imagepath . date("d-m-Y") .'/'. $time . '.jpg');
 
-// insert data
-//include 'inc/dbConnect.php';
-//mysql_query("INSERT INTO 
+//Convert the Image to the right size!
+$command = "./convert.sh ".$imagepath . date("d-m-Y") .'/'. $time . '.jpg';
+exec($command);
 
+// insert data into the mysql database
+$resource =  mysql_query("INSERT INTO Images (name, pfad, date, Category_id) values
+('$time', '../images/".date('d-m-Y')."/$time.jpg',NOW(), $category_id)");
+
+// Delete all not used Images
 foreach($images as $image) {
   imagedestroy($image);
 }
-//imagedestroy($new_image);
 ?>

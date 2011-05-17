@@ -1,6 +1,6 @@
 <?php
-$camAddress ='http://root:gibbiX12345@192.168.10.133';
-	//$camAddress = 'http://196.221.150.6';
+        $camAddress ='http://root:gibbiX12345@192.168.10.137';
+//	$camAddress = 'http://192.168.10.137';
 	if(PHP_OS == "WIN32" || PHP_OS == "WINNT"){
 		$imagepath = "C:\\xampp\htdocs\mountaincam\images\\";
 	}

@@ -1,0 +1,20 @@
+Damit die Bilder erstellt und auch gelöscht werden, sollte man unter Linux
+einen Crontab einrichten.
+
+Informationen zu Crontab:
+Minute (0-59), Stunde (0-23, 0 = Mitternacht), Tag (1-31), Monat (1-12), Wochentage (0-6, 0 = Sonntag)
+Wenn man einen * setzt bedeutet das jede
+
+Als user root
+    crontab -e
+aufrufen, und folgende einträge machen:
+
+# Bilder erstellen am Morgen (08:00)
+00 08 * * * lynx -dump http://localhost/mountaincam/site/panorama.php
+# Bilder erstellen am Mittag (12:00)
+00 12 * * * lynx -dump http://localhost/mountaincam/site/panorama.php
+# Bilder erstellen am Abend (18:00)
+00 18 * * * lynx -dump http://localhost/mountaincam/site/panorama.php
+# Alte Biler löschen
+00 02 * * * lynx -dump http://localhost/mountaincam/site/deleteOldEntries.php
+

@@ -62,7 +62,7 @@ else{
 copy( $imagepath . 'temp.jpg', $imagepath . date("d-m-Y") .'/'. $time . '.jpg');
 
 //Convert the Image to the right size!
-$command = "./convert.sh ".$imagepath . date("d-m-Y") .'/'. $time . '.jpg';
+$command = "./scripts/convert.sh ".$imagepath . date("d-m-Y") .'/'. $time . '.jpg';
 exec($command);
 
 // insert data into the mysql database

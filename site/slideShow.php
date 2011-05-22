@@ -1,9 +1,11 @@
 <?php
-include 'inc/getImages.php';
+// Functionen holen
+include 'inc/functions.php';
 /* Holt sich mit der Function getNewImages()
    die 3 neusten Bilder und zeigt sie in einer
    SlideShow an */
 $image = getNewImages();
+// Content mit dem ersten Bild ausgeben
 echo '    <div class="wrapper img">
       <div class="content">
 	<div id="image" >
@@ -14,6 +16,7 @@ echo '    <div class="wrapper img">
     </div>
     <br class="clear" />';
 
+// Script mit der slide function aufrufen
 echo " <script language='JavaScript'>
 $(function() {
 $('#image').crossSlide({
@@ -28,20 +31,4 @@ echo"  { src: '".$image[0]."' }";
 echo "]); });
     </script>";
 
-$date = getdate();
-
-//Am Morgen
-if($date[hours]>=6 && $date[hours]<12) {
-  //echo 'MORGEN';
-}
-
-//Am Mittog
-if($date[hours]>=12 && $date[hours]<18) {
-  //  echo 'MITTAG <br />';
-}
-
-//Am Abend
-if($date[hours]>=18 && $date[hours]<6) {
-  //echo 'ABEND';
-}
 ?>

@@ -1,4 +1,6 @@
 <?php
+include 'inc/dbConnect.php';
+
 /**
  * Get a web file (HTML, XHTML, XML, image, etc.) from a URL.  Return an
  * array containing the header fields and content.
@@ -46,4 +48,73 @@ function set_camera_position( $side, $repetition, $camAddress){
 		sleep(2);
 	}
 }
+
+/* Holt aus der Datenbank die 3 neuesten Bilder
+   und gibt den Pfad der Bilder im $image Array zurück */
+function getNewImages() {
+  $images = array();
+  $query = "select i.id, i.name, i.pfad, i.date, c.name as category from Images i, Category c where i.Category_id = c.id order by date desc limit 3";
+
+  $result = mysql_query($query);
+  while( $row = mysql_fetch_array($result) ) {
+    $images[] = $row['pfad'];
+  }
+  return $images;
+}
+
+
+/* Holt alle Bilder aus der Datenbank sortiert nach dem neusten
+   und gibt ein zweidimensionales $images Array zurück
+
+   [0][*] = Pfad zum Bild
+   [1][*] = Datum des Bildes
+   [2][*] = Kategorie */
+function getOldImages() {
+  $images = array();
+
+  $path = array();
+  $date = array();
+  $query = "select i.id, i.name, i.pfad, i.date, c.name as category from Images i, Category c where i.Category_id = c.id order by date desc";
+
+  $result = mysql_query($query);
+  while( $row = mysql_fetch_array($result) ) {
+    $path[] = $row['pfad'];
+    $date[] = $row['date'];
+    $desc[] = $row['category'];
+  }
+  $images[0] = $path;
+  $images[1] = $date;
+  $images[2] = $desc;
+  return $images;
+}
+
+//Lösche ein Ordner mit allen Dateien
+function delete_directory($dirname) {
+  //Überprüft ob es überhaupt diesen Ordner gibt
+   if (is_dir($dirname))
+     // Wenn ja gehe hinein
+      $dir_handle = opendir($dirname);
+   // bei Fehler retrun false
+   if (!$dir_handle)
+      return false;
+   /* Solange wir eine Datei im Ordner finden (und das ist kein . oder .. )
+    löschen wir diese
+    Ist es ein Ornder rufen wir die Function auf, um in diesem Ordner alle Files    zu löschen (rekursiv)
+   */
+   while($file = readdir($dir_handle)) {
+      if ($file != "." && $file != "..") {
+         if (!is_dir($dirname."/".$file))
+            unlink($dirname."/".$file);
+         else
+            delete_directory($dirname.'/'.$file);    
+      }
+   }
+   // gehen aus dem Ordner heraus
+   closedir($dir_handle);
+   // da dieser jetzt leer ist, kann man den ordner löschen
+   rmdir($dirname);
+   // alles OK
+   return true;
+}
+
 ?>
